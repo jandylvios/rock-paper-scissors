@@ -34,3 +34,8 @@ img {
 .status {
     margin-top: 60px;
 }
+.copyright {
+    margin-top: 250px;
+    position: inherit;
+    color: aqua;
+}
