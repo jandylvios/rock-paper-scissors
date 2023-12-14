@@ -34,8 +34,22 @@ img {
 .status {
     margin-top: 60px;
 }
+.footer {
+    height: 55px;
+    
+    display: flex;
+    
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
 .copyright {
-    margin-top: 250px;
-    position: inherit;
+    flex: 1;
+    max-width: 100%;
+    display: flex;
     color: aqua;
+    align-items: center;
+    justify-content: center;
 }
