@@ -78,4 +78,5 @@ function resetScore(){
     gameStatus.win = 0;
     gameStatus.lose = 0;
     gameStatus.tie = 0;
+    localStorage.removeItem('gameStatus');
 }
