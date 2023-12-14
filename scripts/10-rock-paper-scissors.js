@@ -1,5 +1,9 @@
 let yourMove = '';
-let gameStatus = JSON.parse(localStorage.getItem('gameStatus'));
+let gameStatus = JSON.parse(localStorage.getItem('gameStatus')) || {
+    win: 0,
+    tie: 0,
+    lose: 0
+};
 
 updateGameStatus();
 
@@ -28,7 +32,6 @@ function updateGamePlay(yourMove, computerMove, result) {
 }
 
 function updateGameStatus() {
-
     document.querySelector('.js-game-status')
         .innerHTML = `Wins: ${gameStatus.win}, Losses: ${gameStatus.lose}, Ties: ${gameStatus.tie}`;
 }
