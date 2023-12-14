@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(25, 25, 25);
+    font-family: roboto, arial;
+    color: white;
+    text-align: center;
+}
+.title {
+    font-weight: bold;
+    font-size: 30px;
+}
+img {
+    height: 50px;
+}
+.hand-button {
+    background-color: transparent;
+    border: 3px solid white;
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.result {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.reset-button {
+    font-size: 15px;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+.status {
+    margin-top: 60px;
+}
