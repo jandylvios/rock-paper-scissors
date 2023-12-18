@@ -1,9 +1,5 @@
 let yourMove = '';
-let gameStatus = JSON.parse(localStorage.getItem('gameStatus')) || {
-    win: 0,
-    tie: 0,
-    lose: 0
-};
+let gameStatus = JSON.parse(localStorage.getItem('gameStatus'));
 
 updateGameStatus();
 
@@ -125,5 +121,4 @@ function resetScore(){
     gameStatus.win = 0;
     gameStatus.lose = 0;
     gameStatus.tie = 0;
-    localStorage.removeItem('gameStatus');
 }
