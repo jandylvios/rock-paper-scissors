@@ -38,28 +38,28 @@ function updateGameStatus() {
 
 document.querySelector('js-rock')
     .addEventListener('click', () => {
-    compareMoves('rock');
-    };
+        compareMoves('rock');
+    });
 
 document.querySelector('js-paper')
     .addEventListener('click', () => {
-    compareMoves('paper');
-    };
+        compareMoves('paper');
+    });
 
 document.querySelector('js-scissors')
     .addEventListener('click', () => {
-    compareMoves('scissors');
-    };
+        compareMoves('scissors');
+    });
 
 document.querySelector('js-reset')
     .addEventListener('click', () => {
-    resetScore();
+        resetScore();
     };
 
 document.querySelector('js-auto-play-button')
     .addEventListener('click', () => {
-    autoPlay();
-    };
+        autoPlay();
+    });
 
 document.body.querySelector('keydown', (event) => {
     if (event.key === 'r') {
