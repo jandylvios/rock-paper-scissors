@@ -54,7 +54,7 @@ document.querySelector('js-scissors')
 document.querySelector('js-reset')
     .addEventListener('click', () => {
         resetScore();
-    };
+    });
 
 document.querySelector('js-auto-play-button')
     .addEventListener('click', () => {
