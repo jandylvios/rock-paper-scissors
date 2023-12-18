@@ -116,15 +116,16 @@ let autoInterval;
 let isAuto = false;
 
 function autoPlay() {
-    let autoButton = document.quereySelector('js-auto-play-button')
-        .innerHTML;
+    let autoButton = document.querySelector('js-auto-play-button');
     
     if (!isAuto) {
+        autoButton.innerHTML = 'Stop Play';
         autoInterval = setInterval(() => {
             compareMoves(pickComputerMove());
         }, 1000);
         isAuto = true;
     } else {
+        autoButton.innerHTML = 'Auto Play';
         clearInterval(autoInterval);
         isAuto = false;
     }
