@@ -37,27 +37,19 @@ function updateGameStatus() {
 }
 
 document.querySelector('.js-rock')
-    .addEventListener('click', () => { compareMoves('rock') });
+    .addEventListener('click', () => { compareMoves('rock'); });
 
 document.querySelector('.js-paper')
-    .addEventListener('click', () => {
-        compareMoves('paper');
-    });
+    .addEventListener('click', () => { compareMoves('paper') });
 
 document.querySelector('.js-scissors')
-    .addEventListener('click', () => {
-        compareMoves('scissors');
-    });
+    .addEventListener('click', () => { compareMoves('scissors') });
 
 document.querySelector('.js-reset')
-    .addEventListener('click', () => {
-        resetScore();
-    });
+    .addEventListener('click', () => { resetScore() });
 
 document.querySelector('.js-auto-play-button')
-    .addEventListener('click', () => {
-        autoPlay();
-    });
+    .addEventListener('click', () => { autoPlay();} );
 
 document.body.querySelector('keydown', (event) => {
     if (event.key === 'r') {
