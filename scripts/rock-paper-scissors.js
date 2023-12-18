@@ -37,9 +37,7 @@ function updateGameStatus() {
 }
 
 document.querySelector('.js-rock')
-    .addEventListener('click', () => {
-        compareMoves('rock');
-    });
+    .addEventListener('click', () => { compareMoves('rock') });
 
 document.querySelector('.js-paper')
     .addEventListener('click', () => {
