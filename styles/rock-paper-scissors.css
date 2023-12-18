@@ -36,16 +36,12 @@ img {
     margin-top: 60px;
 }
 .footer {
-    height: 55px;
-    
+    position: fixed;    
     bottom: 0;
-    z-index: 100;
+    left: 0;
+    right: 0;
 }
 .copyright {
-    flex: 1;
-    max-width: 100%;
-    display: flex;
+    text-align: center;
     color: aqua;
-    align-items: center;
-    justify-content: center;
 }
