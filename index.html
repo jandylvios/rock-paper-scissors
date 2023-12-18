@@ -2,27 +2,21 @@
 <html>
     <header>
         <title>Rock Paper Scissors</title>
-        <link rel="stylesheet" href="styles/10-rock-paper-scissors.css">
+        <link rel="stylesheet" href="styles/rock-paper-scissors.css">
     </header>
     <body>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <p class="title">Rock Paper Scissors</p> 
 
-        <button onclick="
-            pickComputerMove('rock');
-        " class="hand-button">
+        <button class="hand-button js-rock">
             <img src="images/rock-emoji.png">
         </button>
 
-        <button onclick="
-            pickComputerMove('paper');
-        " class="hand-button">
+        <button class="hand-button js-paper">
             <img src="images/paper-emoji.png">
         </button>
 
-        <button onclick="
-            pickComputerMove('scissors');
-        " class="hand-button">
+        <button class="hand-button js-scissors">
             <img src="images/scissors-emoji.png">
         </button>
 
@@ -30,12 +24,10 @@
         <p class="js-game-moves moves"></p>
         <p class="js-game-status status"></p>
 
-        <button onclick="
-            resetScore();
-            updateGameStatus();
-        " class="reset-button">Reset Score</button>
+        <button class="reset-button js-reset">Reset Score</button>
+        <button class="auto-play-button js-auto-play-button">Auto Play</button>
 
-        <script src="scripts/10-rock-paper-scissors.js" type="text/javascript"></script>  
+        <script src="scripts/rock-paper-scissors.js" type="text/javascript"></script>  
     </body>
 
     <footer>
