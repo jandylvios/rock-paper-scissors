@@ -7,7 +7,7 @@ let gameStatus = JSON.parse(localStorage.getItem('gameStatus')) || {
 
 updateGameStatus();
 
-function pickComputerMove(yourMove) {
+function pickComputerMove() {
     
     let computerMove = '';
     
