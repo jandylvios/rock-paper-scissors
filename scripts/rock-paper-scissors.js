@@ -20,7 +20,7 @@ function pickComputerMove(yourMove) {
     else
         computerMove = 'scissors';
     
-    compareMoves(yourMove, computerMove);        
+    return computerMove;       
 }
 
 function updateGamePlay(yourMove, computerMove, result) {
@@ -36,7 +36,45 @@ function updateGameStatus() {
         .innerHTML = `Wins: ${gameStatus.win}, Losses: ${gameStatus.lose}, Ties: ${gameStatus.tie}`;
 }
 
-function compareMoves(yourMove, computerMove) {
+document.querySelector('js-rock')
+    .addEventListener('click', () => {
+    compareMoves('rock');
+    };
+
+document.querySelector('js-paper')
+    .addEventListener('click', () => {
+    compareMoves('paper');
+    };
+
+document.querySelector('js-scissors')
+    .addEventListener('click', () => {
+    compareMoves('scissors');
+    };
+
+document.querySelector('js-reset')
+    .addEventListener('click', () => {
+    resetScore();
+    };
+
+document.querySelector('js-auto-play-button')
+    .addEventListener('click', () => {
+    autoPlay();
+    };
+
+document.body.querySelector('keydown', (event) => {
+    if (event.key === 'r') {
+        compareMoves('rock');
+    } else if (event.key === 'p') {
+        compareMoves('paper');
+    } else if (event.key === 's') {
+        compareMoves('scissors');
+    }
+});
+
+
+function compareMoves(yourMove) {
+
+    const computerMove = pickComputerMove();
 
     let result = '';
     
@@ -72,6 +110,24 @@ function compareMoves(yourMove, computerMove) {
     updateGamePlay(yourMove, computerMove, result);
     updateGameStatus();
 
+}
+
+let autoInterval;
+let isAuto = false;
+
+function autoPlay() {
+    let autoButton = document.quereySelector('js-auto-play-button')
+        .innerHTML;
+    
+    if (!isAuto) {
+        autoInterval = setInterval(() => {
+            compareMoves(pickComputerMove());
+        }, 1000);
+        isAuto = true;
+    } else {
+        clearInterval(autoInterval);
+        isAuto = false;
+    }
 }
 
 function resetScore(){
