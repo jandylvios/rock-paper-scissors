@@ -25,7 +25,8 @@ img {
     font-weight: bold;
     font-size: 25px;
 }
-.reset-button {
+.reset-button,
+.auto-play-button {
     font-size: 15px;
     padding: 8px 15px;
     border: none;
