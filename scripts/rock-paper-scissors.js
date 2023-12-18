@@ -36,27 +36,27 @@ function updateGameStatus() {
         .innerHTML = `Wins: ${gameStatus.win}, Losses: ${gameStatus.lose}, Ties: ${gameStatus.tie}`;
 }
 
-document.querySelector('js-rock')
+document.querySelector('.js-rock')
     .addEventListener('click', () => {
         compareMoves('rock');
     });
 
-document.querySelector('js-paper')
+document.querySelector('.js-paper')
     .addEventListener('click', () => {
         compareMoves('paper');
     });
 
-document.querySelector('js-scissors')
+document.querySelector('.js-scissors')
     .addEventListener('click', () => {
         compareMoves('scissors');
     });
 
-document.querySelector('js-reset')
+document.querySelector('.js-reset')
     .addEventListener('click', () => {
         resetScore();
     });
 
-document.querySelector('js-auto-play-button')
+document.querySelector('.js-auto-play-button')
     .addEventListener('click', () => {
         autoPlay();
     });
@@ -116,7 +116,7 @@ let autoInterval;
 let isAuto = false;
 
 function autoPlay() {
-    let autoButton = document.querySelector('js-auto-play-button');
+    let autoButton = document.querySelector('.js-auto-play-button');
     
     if (!isAuto) {
         autoButton.innerHTML = 'Stop Play';
