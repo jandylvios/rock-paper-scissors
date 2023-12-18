@@ -16,7 +16,7 @@ function pickComputerMove() {
     else
         computerMove = 'scissors';
     
-    return computerMove;       
+    return computerMove;
 }
 
 function updateGamePlay(yourMove, computerMove, result) {
@@ -28,31 +28,43 @@ function updateGamePlay(yourMove, computerMove, result) {
 }
 
 function updateGameStatus() {
+
     document.querySelector('.js-game-status')
         .innerHTML = `Wins: ${gameStatus.win}, Losses: ${gameStatus.lose}, Ties: ${gameStatus.tie}`;
 }
 
 document.querySelector('.js-rock')
-    .addEventListener('click', () => { compareMoves('rock'); });
+    .addEventListener('click', () => {
+        compareMoves('rock');
+    });
 
 document.querySelector('.js-paper')
-    .addEventListener('click', () => { compareMoves('paper') });
+    .addEventListener('click', () => {
+        compareMoves('paper');
+    });
 
 document.querySelector('.js-scissors')
-    .addEventListener('click', () => { compareMoves('scissors') });
+    .addEventListener('click', () => {
+        compareMoves('scissors');
+    });
 
 document.querySelector('.js-reset')
-    .addEventListener('click', () => { resetScore() });
+    .addEventListener('click', () => {
+        resetScore();
+        updateGameStatus();
+    });
 
 document.querySelector('.js-auto-play-button')
-    .addEventListener('click', () => { autoPlay();} );
+    .addEventListener('click', () => {
+        playOption();
+    });
 
-document.body.querySelector('keydown', (event) => {
-    if (event.key === 'r') {
+document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r') {
         compareMoves('rock');
-    } else if (event.key === 'p') {
+    } else if(event.key === 'p') {
         compareMoves('paper');
-    } else if (event.key === 's') {
+    } else if(event.key === 's'){
         compareMoves('scissors');
     }
 });
@@ -60,7 +72,7 @@ document.body.querySelector('keydown', (event) => {
 
 function compareMoves(yourMove) {
 
-    const computerMove = pickComputerMove();
+    let computerMove = pickComputerMove();
 
     let result = '';
     
@@ -98,27 +110,28 @@ function compareMoves(yourMove) {
 
 }
 
-let autoInterval;
-let isAuto = false;
-
-function autoPlay() {
-    let autoButton = document.querySelector('.js-auto-play-button');
-    
-    if (!isAuto) {
-        autoButton.innerHTML = 'Stop Play';
-        autoInterval = setInterval(() => {
-            compareMoves(pickComputerMove());
-        }, 1000);
-        isAuto = true;
-    } else {
-        autoButton.innerHTML = 'Auto Play';
-        clearInterval(autoInterval);
-        isAuto = false;
-    }
-}
-
-function resetScore(){
+function resetScore() {
     gameStatus.win = 0;
     gameStatus.lose = 0;
     gameStatus.tie = 0;
+}
+
+let auto = false;
+let autoInterval;
+
+function playOption() {
+    let option = document.querySelector('.js-auto-play-button');
+
+    if (!auto) {
+        option.innerHTML = 'Stop Play';     
+        autoInterval = setInterval(() => {
+            compareMoves(pickComputerMove());
+        }, 1000);
+        auto = true;
+    } else {        
+        option.innerHTML = 'Auto Play';
+        clearInterval(autoInterval);
+        auto = false;
+    }
+
 }
