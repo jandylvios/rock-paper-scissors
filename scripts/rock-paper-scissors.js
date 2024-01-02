@@ -7,13 +7,13 @@ function pickComputerMove() {
     
     let computerMove = '';
     
-    const randomNumber = Math.random();
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
 
-    if (randomNumber >= 0 && randomNumber < 1/3)
+    if (randomNumber === 1)
         computerMove = 'rock';
-    else if (randomNumber >= 1/3 && randomNumber < 2/3)
+    else if (randomNumber === 2)
         computerMove = 'paper';
-    else
+    else if (randomNumber === 3)
         computerMove = 'scissors';
     
     return computerMove;
